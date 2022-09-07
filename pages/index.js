@@ -1,14 +1,8 @@
-import { MyHead, MyFooter } from './components'
+import { DefaultTemplate } from '../components/defaultTemplate'
 
-export default function Home() {
-  return (
-    <>
-      <MyHead title="Products"/>
+const Home = () =>
+  <DefaultTemplate title="Produtos">
+    Teste
+  </DefaultTemplate>
 
-      <main className="">       
-      </main>
-
-      <MyFooter/>
-    </>
-  )
-}
+export default Home
