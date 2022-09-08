@@ -4,13 +4,15 @@ const primitiveColors = {
     black: '#000000',
     white: '#ffffff',
     gray: '#5c5c5c',
-    darkGray: '#0C0C0C',
-    lightGray: '#E0E0E0',
-    red: '#d71920'
+    grayDark: '#0C0C0C',
+    grayLight: '#E0E0E0',
+    red: '#d71920',
+    redDark: '#6b0c10'
 }
 
 const themeColors = {
     primary: primitiveColors.red,
+    primaryDark: primitiveColors.redDark,
     textColor: primitiveColors.black,
     bgColor: primitiveColors.white,
 }
@@ -30,12 +32,41 @@ const themeSpacing = {
     defaultMargin: '16px'
 }
 
+// Components
+
+const components = {
+
+    colorButtons: {
+
+        default: {
+            textColor: primitiveColors.white,
+            bgColor: primitiveColors.gray,
+            
+            hover: {
+                textColor: primitiveColors.white,
+                bgColor: primitiveColors.grayDark,
+            }
+        },
+        
+        primary: {
+            textColor: primitiveColors.white,
+            bgColor: themeColors.primary,
+
+            hover: {
+                textColor: primitiveColors.white,
+                bgColor: themeColors.primaryDark,
+            }
+        },
+    }
+}
+
 // Theme
 
 const theme = {
     colors: { ...primitiveColors, ...themeColors },
     typography: { ...themeTypography },
-    spacing: { ...themeSpacing }
+    spacing: { ...themeSpacing },
+    components: { ...components }
 }
 
 export default theme;

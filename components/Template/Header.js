@@ -6,7 +6,7 @@ const StyledHeader = styled.header`${({ theme: { colors, spacing } }) => `
     grid-area: header;
     display: flex;
     align-items: center;
-    background-color: ${colors.darkGray};
+    background-color: ${colors.grayDark};
     padding-left: ${spacing.defaultPadding};
     padding-right: ${spacing.defaultPadding}
 `}`
