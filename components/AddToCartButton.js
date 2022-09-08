@@ -1,29 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCart, updateCart } from '../store/cartSlice';
 
 const AddToCartButton = ({id, quantity = 0}) => {
 
-    const [cart, setCart] = useState([])
-
-    useEffect(() => {
-        localStorage.removeItem('cart');
-        localStorage.setItem('cart', JSON.stringify(cart))
-    }, [cart])
+    const dispatch = useDispatch()
+    const cartState = useSelector(selectCart)
 
     const incrementQuantity = id => {
-        const updatedCart = cart.map(item => {
+        const updatedCart = cartState.map(item => {
             if (item.id === id) {
-                return {...item, quantity: quantity + 1}
+                return {...item, quantity: item.quantity + 1}
             }
-            return item
+            return item;
         })
-        setCart(updatedCart)
+        dispatch(updateCart(updatedCart))
     }
 
     const addItemToCart = id => {
-        if (!cart.lenght) {
-            setCart({id, quantity:1})
-        } else {   
+        const itemExists = cartState.find(item => item.id === id)
+
+        if (itemExists) {
             incrementQuantity(id)
+        } else {
+            dispatch(updateCart([...cartState, {id, quantity: 1}]))
         }
     }
 

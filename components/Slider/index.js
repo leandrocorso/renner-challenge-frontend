@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
-import styled from "styled-components"
+import { useState, useEffect } from 'react'
+import styled from 'styled-components'
 import { AddToCartButton } from '../'
 
 const SliderWrapper = styled.div`${({width=400, height=600}) => `
@@ -15,7 +15,7 @@ const ImgWrapper = styled.div`${({bgImage, isActive}) => `
     height: 100%;
     background: url(${bgImage}) center no-repeat;
     background-size: cover;
-    z-index: ${isActive ? '1' : '0'};
+    z-index: ${isActive ? '1' : '-1'};
     transition: .5s
 `}`
 
