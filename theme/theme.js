@@ -1,3 +1,5 @@
+// Colors
+
 const primitiveColors = {
     black: '#000000',
     white: '#ffffff',
@@ -13,14 +15,27 @@ const themeColors = {
     bgColor: primitiveColors.white,
 }
 
+// Typography
+
 const themeTypography = {
     defaultFont: 'Roboto, sans-serif',
     defaultFontSize: '16px'
 }
 
+// Spacing
+
+const themeSpacing = {
+    maxWidth: '440px',
+    defaultPadding: '16px',
+    defaultMargin: '16px'
+}
+
+// Theme
+
 const theme = {
     colors: { ...primitiveColors, ...themeColors },
-    typography: { ...themeTypography }
+    typography: { ...themeTypography },
+    spacing: { ...themeSpacing }
 }
 
 export default theme;
