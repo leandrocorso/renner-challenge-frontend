@@ -40,10 +40,10 @@ export const loadProducts = () => {
 }
 
 export const loadProduct = id => {
-    loadCurrent()
     return async dispatch => {
-        const products = await getProduct(id)
-        dispatch(currentLoaded(products))
+        loadCurrent()
+        const product = await getProduct(id)
+        dispatch(currentLoaded(product))
     }
 }
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import { selectProducts } from '../store/productsSlice'
 
@@ -126,14 +127,14 @@ const Slider = ({width = 440, quant = 3}) => {
                                 
                     if (id) {
                         return <li key={index}>
-                            <a className='image-wrapper' href={`/products/${id}`}>
-                                { image && <Image 
+                            { image && <Link href={`/products/${id}`}>
+                                <a className='image-wrapper' ><Image 
                                     src={image} 
                                     alt={title}
                                     layout={'fill'}
                                     objectFit={'cover'}
-                                    /> }
-                            </a>
+                                /></a>
+                            </Link> }
                         </li>
                     }
                 })
