@@ -22,6 +22,11 @@ const GlobalStyle = createGlobalStyle`${({theme: {colors, typography, spacing}})
         font-size: 180%;
         margin-bottom: calc(${spacing.defaultMargin} * 1.5);
     }
+
+    h2 {
+        font-size: 130%;
+        margin-bottom: ${spacing.defaultMargin};
+    }
     
     p { 
         margin-bottom: ${spacing.defaultMargin};
