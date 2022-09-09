@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { loadProducts } from '../store/productsSlice'
 
-import { Banner, Carousel, Template } from '../components'
+import { Banner, Carousel, Slider, Template } from '../components'
 
 const Home = () => {
 
@@ -28,6 +28,8 @@ const Home = () => {
     <Carousel/>
 
     <Banner/>
+
+    <Slider/>
 
   </Template>
 }

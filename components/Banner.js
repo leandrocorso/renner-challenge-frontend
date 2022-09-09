@@ -99,13 +99,13 @@ const Banner = () => {
         {
             <a href={`/products/${id}`}>
                 <ImageWrapper>
-                    <Image 
+                    { image && <Image 
                         src={image} 
                         alt={title}
                         width={300}
                         height={700}
                         objectFit={'cover'}
-                        />
+                        /> }
                 </ImageWrapper>
 
                 <TextWrapper>
