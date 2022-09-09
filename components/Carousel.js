@@ -5,10 +5,11 @@ import { selectProducts } from '../store/productsSlice'
 import styled from 'styled-components'
 import { AddToCartButton, Loader } from '.'
 
-const CarouselWrapper = styled.div`${({width=400, height=600}) => `
-    width: ${width}px;
-    height: ${width / 1.33}px;
+const CarouselWrapper = styled.div`${({theme: { spacing }}) => `
+    width: 440px;
+    height: ${440 / 1.33}px;
     position: relative;
+    margin-bottom: ${spacing.defaultMargin}
 `}`
 
 const ImgWrapper = styled.div`${({bgImage, isActive}) => `
@@ -28,16 +29,16 @@ const Carousel = ({time = 5000}) => {
 
     const [activeImage, setActiveImage] = useState(0);
 
-    const nextImage = () => {
-        activeImage >= (data.length-1)
-            ? setActiveImage(0)
-            : setActiveImage(activeImage + 1)
-    }
+
 
     useEffect(() => {
-        const interval = setInterval(() => nextImage(), time)
+        const interval = setInterval(() => {
+            activeImage >= (data.length-1)
+            ? setActiveImage(0)
+            : setActiveImage(activeImage + 1)
+        }, time)
         return () => clearInterval(interval)
-    }, [nextImage])
+    }, [activeImage, data.length, time])
 
     if (isLoading) {
         return <Loader/>

@@ -2,6 +2,7 @@
 
 const primitiveColors = {
     black: '#000000',
+    black50: 'rgba(0,0,0,0.5)',
     white: '#ffffff',
     gray: '#5c5c5c',
     grayDark: '#0C0C0C',

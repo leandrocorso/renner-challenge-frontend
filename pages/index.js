@@ -20,14 +20,14 @@ const Home = () => {
     
     <ol>
         <li><s>Um carrossel com a opção adicionar ao carrinho;</s></li>
-        <li>Um banner com o produto com o preço mais baixo;</li>
+        <li><s>Um banner com o produto com o preço mais baixo;</s></li>
         <li>Um carrossel com todos os produtos;</li>
         <li><s>Validação de estoque (se não houver em estoque, remover a opção de adicionar ao carrinho.</s></li>
     </ol>
 
-    <Banner/>
-
     <Carousel/>
+
+    <Banner/>
 
   </Template>
 }

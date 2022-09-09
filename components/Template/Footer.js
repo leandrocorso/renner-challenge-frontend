@@ -5,7 +5,7 @@ const StyledFooter = styled.footer`${({ theme: { colors, spacing } }) => `
     display: flex;
     align-items: center;
     grid-area: footer;
-    background-color: ${colors.lightGray};
+    background-color: ${colors.grayLight};
     padding-left: ${spacing.defaultPadding};
     padding-right: ${spacing.defaultPadding};
     font-size: 80%;
