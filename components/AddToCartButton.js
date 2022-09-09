@@ -60,7 +60,7 @@ const AddToCartButton = ({id, quantity = 0}) => {
     const enabledToAdd = () => {
         if (itensEnabled) {
             return <>
-                <Button onClick={() => addItemToCart(id)}>Add to cart</Button>
+                <Button onClick={() => addItemToCart(id)}>Adicionar ao carrinho</Button>
                 <small>Ítems disponíveis: {itensEnabled}</small>
             </>
         }

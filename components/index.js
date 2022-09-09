@@ -1,13 +1,17 @@
 import AddToCartButton from './AddToCartButton'
+import Banner from './Banner'
 import Button from './Button'
-import Slider from './Slider'
+import Carousel from './Carousel'
+import Loader from './Loader'
 import Template from './Template'
 import Wrapper from './Wrapper'
 
 export { 
     AddToCartButton,
+    Banner,
     Button,
-    Slider,
+    Carousel,
+    Loader,
     Template,
     Wrapper
 };
