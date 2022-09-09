@@ -13,14 +13,14 @@ Clone thist repository you should to enter on same folder using a terminal and e
 
 ```
 npm install
-npm start
+npm dev
 ```
 
 Or if you prefer to use Yarn (just like me)
 
 ```
 yarn install
-yarn start
+yarn dev
 ```
 
 On terminal you must to see the message: 
