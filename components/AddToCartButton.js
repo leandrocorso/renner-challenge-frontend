@@ -7,15 +7,13 @@ import { Button } from '../components'
 
 const StyledButtonWrapper = styled.div`${({theme: {colors, spacing}}) => `
     display: flex;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    flex-direction: column;
     background-color: ${colors.primary};
     color: ${colors.white};
 
     small {
-        min-height: 40px;
-        padding: ${spacing.defaultPadding}
+        padding: calc(${spacing.defaultPadding} / 2) ${spacing.defaultPadding};
+        text-align: center;
     }
 `}`
 

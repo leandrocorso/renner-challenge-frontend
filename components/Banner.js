@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { Loader } from '.'
 
 import { formatCurrency } from '../utils'
+import Link from 'next/link'
 
 const BannerWrapper = styled.div`${({theme: { colors, spacing }}) => `
     display: block;
@@ -97,22 +98,24 @@ const Banner = () => {
 
     return <BannerWrapper>
         {
-            <a href={`/products/${id}`}>
-                <ImageWrapper>
-                    { image && <Image 
-                        src={image} 
-                        alt={title}
-                        width={300}
-                        height={700}
-                        objectFit={'cover'}
-                        /> }
-                </ImageWrapper>
+            <Link href={`/products/${id}`}>
+                <a>
+                    <ImageWrapper>
+                        { image && <Image 
+                            src={image} 
+                            alt={title}
+                            width={300}
+                            height={700}
+                            objectFit={'cover'}
+                            /> }
+                    </ImageWrapper>
 
-                <TextWrapper>
-                    <p className='title'>{title}</p>
-                    <p className='price'>R$ { formatCurrency(price) }</p>
-                </TextWrapper>
-            </a>
+                    <TextWrapper>
+                        <p className='title'>{title}</p>
+                        <p className='price'>R$ { formatCurrency(price) }</p>
+                    </TextWrapper>
+                </a>
+            </Link>
         }
     </BannerWrapper>
 

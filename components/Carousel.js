@@ -23,6 +23,12 @@ const ImgWrapper = styled.div`${({bgImage, isActive}) => `
     transition: .5s
 `}`
 
+const AddToCartButtonWrapper = styled.div`
+    position: absolute;
+    bottom: 0;
+    right: 0;
+`
+
 const Carousel = ({time = 5000}) => {
 
     const {isLoading, data} = useSelector(selectProducts)
@@ -58,7 +64,9 @@ const Carousel = ({time = 5000}) => {
                         bgImage={image} 
                         isActive={index === activeImage}
                         >
-                            <AddToCartButton id={id} quantity={quantity}/>
+                            <AddToCartButtonWrapper>
+                                <AddToCartButton id={id} quantity={quantity}/>
+                            </AddToCartButtonWrapper>
                         </ImgWrapper>
                 }
             })
