@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(loadProducts())
-  }, [])
+  }, [dispatch])
 
   return <Template title="Produtos">
     

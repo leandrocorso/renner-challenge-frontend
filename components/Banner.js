@@ -15,14 +15,17 @@ const Banner = () => {
     const [cheaperProduct, setCheaperProduct] = useState({});
 
     useEffect(() => {
-        const cheaperProductFinded = data.reduce((acc, product) => {
-            if (acc.price > product.price) {
-                return product
-            } else {
-                return acc
-            }
-        })
-        setCheaperProduct(cheaperProductFinded)
+        if (data.length > 0) {
+
+            const cheaperProductFinded = data.reduce((acc, product) => {
+                if (acc.price > product.price) {
+                    return product
+                } else {
+                    return acc
+                }
+            })
+            setCheaperProduct(cheaperProductFinded)
+        }
     }, [data])
 
 
