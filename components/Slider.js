@@ -4,6 +4,9 @@ import { useSelector } from 'react-redux'
 import { selectProducts } from '../store/productsSlice'
 
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+
 import { Loader } from './'
 
 const SliderWrapper = styled.div`${({ 
@@ -46,8 +49,7 @@ const SliderWrapper = styled.div`${({
         }
     }
 `}`
-
-const NavWrapper = styled.ul`
+const NavWrapper = styled.ul`${({theme: { colors, spacing }}) => `
     width: 100%;
     height: 100%;
     display: flex;
@@ -61,6 +63,14 @@ const NavWrapper = styled.ul`
     li {
         position: absolute;
         display: none;
+        padding: calc(${spacing.defaultPadding} / 2);
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+            background-color: ${colors.black50};
+            color: ${colors.white};
+        }
 
         &.enabled {
             display:block;
@@ -75,7 +85,7 @@ const NavWrapper = styled.ul`
         }
     }
 
-`
+`}`
 
 const Slider = ({width = 440, quant = 3}) => {
 
@@ -134,16 +144,20 @@ const Slider = ({width = 440, quant = 3}) => {
             <li
                 className={`prev ${previousEnabled ? 'enabled' : ''}`}
                 onClick={() => handleMoveSlider('prev')}
+                title="Anterior"
                 >
-                    prev
+                    <FontAwesomeIcon icon={faChevronLeft} />
             </li>
 
-            <li 
+            <li
                 className={`next ${nextEnabled ? 'enabled' : ''}`}
                 onClick={() => handleMoveSlider('next')}
+                title="Próximo"
                 >
-                    next
+                    <FontAwesomeIcon icon={faChevronRight} />
             </li>
+
+            
         </NavWrapper>
     </SliderWrapper>
 
